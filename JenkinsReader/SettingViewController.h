@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SettingViewController.h
 //  JenkinsReader
 //
 //  Created by KazukiKubo on 2013/01/22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SettingViewController : UIViewController
 
 @end
