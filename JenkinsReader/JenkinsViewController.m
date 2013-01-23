@@ -45,7 +45,7 @@
 
 /** myUrlConnection delegate method */
 -(void)didFinishParseWithData:(NSArray*)parsedData {
-    NSLog(@"finish parse");
+    NSLog(@"finish parse %@", [parsedData objectAtIndex:0]);
 }
 
 @end

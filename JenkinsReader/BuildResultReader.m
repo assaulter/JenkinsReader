@@ -54,10 +54,6 @@
     
     // バッファにデータを貯める
     [dataBuffer appendData:data];
-    
-//    NSXMLParser* parser = [[NSXMLParser alloc]initWithData:data];
-//    [parser setDelegate:self];
-//    [parser parse];
 }
 
 // データを全て受け取ると呼び出される
@@ -116,6 +112,17 @@ parseErrorOccurred:(NSError *)parseError {
           [parser columnNumber],
           [parser lineNumber],
           [parseError description]);
+}
+
+/** パースした結果を見て、Jenkinsのステータスが変わったかどうかを判定するメソッド 
+    ステータスコード : 1 → 状態が悪くなった
+    ステータスコード : 2 → 状態が良くなった
+    ステータスコード : 3 → 状態は悪いまま */
+- (int)isStatusChanged:(NSArray*)data {
+    NSString* newestStatus; // 最新の状態
+    NSString* beforeStatus; // 履歴の中で最も最新に近いかつステータスが最新とはことなるもの
+    
+    return YES;
 }
 
 @end
