@@ -11,4 +11,7 @@
 
 @interface JenkinsViewController : UIViewController<BuildResultReaderDelegate>
 
+@property (nonatomic,retain) NSMutableArray* workSpace;
+@property (nonatomic,retain) NSMutableArray* status;
+
 @end

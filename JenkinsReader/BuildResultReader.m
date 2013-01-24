@@ -9,23 +9,20 @@
 #import "BuildResultReader.h"
 
 @interface BuildResultReader() {
+    NSMutableString* outputData;
     NSMutableData* dataBuffer;
-    BOOL isElement;
-    NSMutableArray* elementBuffer;
+    BOOL isEntry, isTitle;
 }
-
 @end
 
 @implementation BuildResultReader
 
-
 - (id)init {
     self = [super init];
     if (self) {
+        outputData = [[NSMutableString alloc]init];
         dataBuffer = [[NSMutableData alloc]initWithCapacity:0];
-        elementBuffer = [[NSMutableArray alloc]initWithCapacity:0];
     }
-    NSLog(@"MyUrlConnection is initted");
     return self;
 }
 
@@ -36,22 +33,12 @@
     [connection start];
 }
 
-- (void)startConnection {
-    NSString *urlstring = @"http://sinri.net/feed/atom";
-    NSURL *url = [NSURL URLWithString:urlstring];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
-    [connection start];
-}
-
 // レスポンスを受け取った時点で呼び出される。データ受信よりも前
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
 }
 
 // データを受け取る度に呼び出される
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    NSLog(@"did receive data %@", [[NSString alloc]initWithData:data encoding:NSStringEncodingConversionAllowLossy]);
-    
     // バッファにデータを貯める
     [dataBuffer appendData:data];
 }
@@ -66,42 +53,46 @@
 // XMLのパース開始
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	// element フラグを初期化（NO に設定）
-    isElement = NO;
-    NSLog(@"start document");
+    isEntry = NO;
+    isTitle = NO;
 }
 
 // 要素の開始タグを読み込み
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName attributes:(NSDictionary *)attributeDict {
 	// element があるかどうかチェック
-    if ([elementName isEqualToString:@"title"]) {
+    if ([elementName isEqualToString:@"entry"]) {
 		// element フラグを YES に設定
-		isElement = YES;
-		// 要素の値を入れる領域を初期化する
+		isEntry = YES;
 	}
+    if ([elementName isEqualToString:@"title"]) {
+        isTitle = YES;
+    }
 }
 
-// 要素の値を読み込み
+// 要素の値を読み込み(複数回に渡って実行される可能性がある)
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
 	// element フラグが YES かどうかチェック
-	if (isElement) {
+	if (isEntry && isTitle) {
 		// 要素の値を elementBuffer へ追加
-		[elementBuffer addObject:string];
+        [outputData appendString:string];
 	}
 }
 
 // 要素の閉じタグを読み込み
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 	// element フラグが YES かどうかチェック
-	if (isElement) {
+	if ([elementName isEqualToString:@"entry"]) {
 		// element フラグを NO に設定
-		isElement = NO;
+		isEntry = NO;
 	}
+    if ([elementName isEqualToString:@"title"]) {
+        isTitle = NO;
+    }
 }
 
 // XML のパース終了
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    [self.delegate didFinishParseWithData:elementBuffer];
-    NSLog(@"element buffer count : %d", [elementBuffer count]);
+    [self.delegate didFinishParseWithData:outputData];
 }
 
 - (void)parser:(NSXMLParser *)parser
@@ -112,17 +103,6 @@ parseErrorOccurred:(NSError *)parseError {
           [parser columnNumber],
           [parser lineNumber],
           [parseError description]);
-}
-
-/** パースした結果を見て、Jenkinsのステータスが変わったかどうかを判定するメソッド 
-    ステータスコード : 1 → 状態が悪くなった
-    ステータスコード : 2 → 状態が良くなった
-    ステータスコード : 3 → 状態は悪いまま */
-- (int)isStatusChanged:(NSArray*)data {
-    NSString* newestStatus; // 最新の状態
-    NSString* beforeStatus; // 履歴の中で最も最新に近いかつステータスが最新とはことなるもの
-    
-    return YES;
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3662A74716B1E23A0087DA9B /* BuildInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662A74616B1E23A0087DA9B /* BuildInfo.m */; };
 		3682E21C16AEA20500F4A434 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21B16AEA20500F4A434 /* UIKit.framework */; };
 		3682E21E16AEA20500F4A434 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21D16AEA20500F4A434 /* Foundation.framework */; };
 		3682E22016AEA20500F4A434 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21F16AEA20500F4A434 /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3662A74516B1E23A0087DA9B /* BuildInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildInfo.h; sourceTree = "<group>"; };
+		3662A74616B1E23A0087DA9B /* BuildInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildInfo.m; sourceTree = "<group>"; };
 		3682E21716AEA20500F4A434 /* JenkinsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JenkinsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3682E21B16AEA20500F4A434 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3682E21D16AEA20500F4A434 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,8 @@
 				3682E23F16AEA26500F4A434 /* SettingViewController.m */,
 				3682E24016AEA26500F4A434 /* SettingViewController.xib */,
 				3682E2B416AFF7B300F4A434 /* Algo.txt */,
+				3662A74516B1E23A0087DA9B /* BuildInfo.h */,
+				3662A74616B1E23A0087DA9B /* BuildInfo.m */,
 			);
 			path = JenkinsReader;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				3682E23516AEA20500F4A434 /* JenkinsViewController.m in Sources */,
 				3682E24116AEA26500F4A434 /* SettingViewController.m in Sources */,
 				3682E24516AEA7D800F4A434 /* BuildResultReader.m in Sources */,
+				3662A74716B1E23A0087DA9B /* BuildInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +322,7 @@
 				3682E23D16AEA20500F4A434 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
