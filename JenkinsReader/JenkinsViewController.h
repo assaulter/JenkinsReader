@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "BuildResultReader.h"
+#import "BuildInfo.h"
 
 @interface JenkinsViewController : UIViewController<BuildResultReaderDelegate>
 
 @property (nonatomic,retain) NSMutableArray* workSpace;
 @property (nonatomic,retain) NSMutableArray* status;
+@property (nonatomic,retain) NSMutableArray* data; // buildInfoの配列
+
+@property (nonatomic,retain) BuildInfo* buildInfo;
 
 @end

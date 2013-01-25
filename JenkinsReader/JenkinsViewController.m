@@ -11,6 +11,10 @@
 
 static const float TIMER_INTERVAL = 5.0;
 
+static const int GOOD = 1;
+static const int BETTER = 2;
+static const int BAD = 3;
+
 @interface JenkinsViewController () {
     NSTimer* _timer;
     BuildResultReader* _resultReader;
@@ -25,8 +29,7 @@ static const float TIMER_INTERVAL = 5.0;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     _resultReader = [[BuildResultReader alloc]init];
-    self.workSpace = [[NSMutableArray alloc]init];
-    self.status = [[NSMutableArray alloc]init];
+    self.data = [[NSMutableArray alloc]init];
     [self timerStartWithSelector:@selector(startParse)];
 }
 
@@ -47,45 +50,55 @@ static const float TIMER_INTERVAL = 5.0;
     [_resultReader startConnectionWithUrl:@"file:///Users/kazukikubo/Downloads/rssLatest.xml"];
 }
 
-/** myUrlConnection delegate method */
+/** myUrlConnection delegate method
+    XMLParserのfinishがトリガー */
 -(void)didFinishParseWithData:(NSString*)parsedData {
     NSLog(@"parsedData %@", parsedData);
-    NSString* data = [[parsedData stringByReplacingOccurrencesOfString:@"安定" withString:@"安定 "]
-        stringByReplacingOccurrencesOfString:@"故障" withString:@"故障 "];
+    NSString* data = [[parsedData stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@" "];
     NSArray* phrases = [data componentsSeparatedByString:@" "];
+    
     [self arrayToDictionary:phrases];
+    // アプリの状態を取得する
+    
 }
 
-// ワークスペースと状態の配列にデータを格納する
+// 配列にデータ(BuildInfo型)を格納する
 - (void)arrayToDictionary:(NSArray*)array {
-    for (int i = 0; i<[array count]; i++) {
+    int i = 0;
+    while ([[array objectAtIndex:i]length] != 0) {
+        BuildInfo* info = [BuildInfo new];
         if (i%3 == 0) { // ワークスペース名が入っている
-            [self.workSpace addObject:[array objectAtIndex:i]];
-            NSLog(@"workspace %@", [array objectAtIndex:i]);
+            info.workSpaceName = [array objectAtIndex:i];
+        } else if (i%3 == 1){ // ビルドナンバーが入っている
+            info.buildNumber = [array objectAtIndex:i];
         } else { // 状態が入っている
-            [self.status addObject:[array objectAtIndex:i]];
+            info.status = [array objectAtIndex:i];
         }
+        [self.data addObject:info];
+        i++;
     }
 }
 
-/** 状態をステータスコードに変換するメソッド
- ステータスコード : 1 → 状態が悪くなった
- ステータスコード : 2 → 状態が良くなった
- ステータスコード : 3 → 状態は悪いまま */
-- (int)isStatusChanged:(NSArray*)status {
-    int code = 0;
-    for (NSString* str in status) {
-        if ([str isEqualToString:@"安定"]) {
-            code = 0;
-        } else if ([str isEqualToString:@"このビルドから故障"]) {
-            code = 1;
-        } else if ([str isEqualToString:@"正常に復帰"]) {
-            code = 2;
-        } else {
-            code = 3;
+/** アプリとして状態はどうなのかを返す。
+    つまり：self.dataを見て、
+    一つでも悪いのがあったら → bad
+    状態が悪いまま → bad
+    --------------------------------
+    状態が良くなったものがあったら → better (安定 + 正常に復帰)
+    安定 → good (All 安定)
+    の三種類に分類する
+ */
+- (int)getAppStatus {
+    int appStatus = GOOD; // 初期状態。なんもなかったらコレを返す
+    for (BuildInfo* info in self.data) {
+        if ([info.status hasSuffix:@"故障"]) {
+            appStatus = BAD;
+            break;
+        } else if ([info.status hasSuffix:@"復帰"]) {
+            appStatus = BETTER;
         }
     }
-    return code;
+    return appStatus;
 }
 
 @end
