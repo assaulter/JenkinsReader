@@ -19,6 +19,9 @@
 		3662A7C316B3AEE30087DA9B /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662A7C216B3AEE30087DA9B /* GHUnitIOS.framework */; };
 		3662A7C416B3AEE30087DA9B /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662A7C216B3AEE30087DA9B /* GHUnitIOS.framework */; };
 		3662A7C616B3AF450087DA9B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662A7C516B3AF450087DA9B /* QuartzCore.framework */; };
+		3662A7DF16B3B8960087DA9B /* ParseResultAnalyserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662A7DE16B3B8960087DA9B /* ParseResultAnalyserTest.m */; };
+		3662A7E316B3B8C40087DA9B /* ParseResultAnalyser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662A7E216B3B8C40087DA9B /* ParseResultAnalyser.m */; };
+		3662A7E416B3B8C40087DA9B /* ParseResultAnalyser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662A7E216B3B8C40087DA9B /* ParseResultAnalyser.m */; };
 		3682E21C16AEA20500F4A434 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21B16AEA20500F4A434 /* UIKit.framework */; };
 		3682E21E16AEA20500F4A434 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21D16AEA20500F4A434 /* Foundation.framework */; };
 		3682E22016AEA20500F4A434 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21F16AEA20500F4A434 /* CoreGraphics.framework */; };
@@ -50,6 +53,10 @@
 		3662A7BC16B3AE8F0087DA9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3662A7C216B3AEE30087DA9B /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../../../Developer/GHUnitIOS.framework; sourceTree = "<group>"; };
 		3662A7C516B3AF450087DA9B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3662A7DD16B3B8960087DA9B /* ParseResultAnalyserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseResultAnalyserTest.h; sourceTree = "<group>"; };
+		3662A7DE16B3B8960087DA9B /* ParseResultAnalyserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseResultAnalyserTest.m; sourceTree = "<group>"; };
+		3662A7E116B3B8C40087DA9B /* ParseResultAnalyser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseResultAnalyser.h; sourceTree = "<group>"; };
+		3662A7E216B3B8C40087DA9B /* ParseResultAnalyser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseResultAnalyser.m; sourceTree = "<group>"; };
 		3682E21716AEA20500F4A434 /* JenkinsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JenkinsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3682E21B16AEA20500F4A434 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3682E21D16AEA20500F4A434 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,6 +112,8 @@
 		3662A7AC16B3AE8F0087DA9B /* GHUnit */ = {
 			isa = PBXGroup;
 			children = (
+				3662A7DD16B3B8960087DA9B /* ParseResultAnalyserTest.h */,
+				3662A7DE16B3B8960087DA9B /* ParseResultAnalyserTest.m */,
 				3662A7AD16B3AE8F0087DA9B /* Supporting Files */,
 			);
 			path = GHUnit;
@@ -173,6 +182,8 @@
 				3682E2B416AFF7B300F4A434 /* Algo.txt */,
 				3662A74516B1E23A0087DA9B /* BuildInfo.h */,
 				3662A74616B1E23A0087DA9B /* BuildInfo.m */,
+				3662A7E116B3B8C40087DA9B /* ParseResultAnalyser.h */,
+				3662A7E216B3B8C40087DA9B /* ParseResultAnalyser.m */,
 			);
 			path = JenkinsReader;
 			sourceTree = "<group>";
@@ -290,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3662A7B316B3AE8F0087DA9B /* main.m in Sources */,
+				3662A7DF16B3B8960087DA9B /* ParseResultAnalyserTest.m in Sources */,
+				3662A7E416B3B8C40087DA9B /* ParseResultAnalyser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +316,7 @@
 				3682E24116AEA26500F4A434 /* SettingViewController.m in Sources */,
 				3682E24516AEA7D800F4A434 /* BuildResultReader.m in Sources */,
 				3662A74716B1E23A0087DA9B /* BuildInfo.m in Sources */,
+				3662A7E316B3B8C40087DA9B /* ParseResultAnalyser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +480,7 @@
 				3662A7BF16B3AE8F0087DA9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3682E21116AEA20500F4A434 /* Build configuration list for PBXProject "JenkinsReader" */ = {
 			isa = XCConfigurationList;

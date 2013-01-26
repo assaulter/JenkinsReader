@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GHUnitIOS/GHUnit.h>
+#import "ParseResultAnalyser.h"
 
-@interface ParseResultAnalyserTest : NSObject
+@interface ParseResultAnalyserTest : GHTestCase
+
+@property (nonatomic, assign) NSString* testData;
 
 @end
