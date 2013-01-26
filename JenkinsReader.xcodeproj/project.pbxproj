@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3662A74716B1E23A0087DA9B /* BuildInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662A74616B1E23A0087DA9B /* BuildInfo.m */; };
+		3662A7A916B3AE8E0087DA9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21B16AEA20500F4A434 /* UIKit.framework */; };
+		3662A7AA16B3AE8E0087DA9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21D16AEA20500F4A434 /* Foundation.framework */; };
+		3662A7AB16B3AE8E0087DA9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21F16AEA20500F4A434 /* CoreGraphics.framework */; };
+		3662A7B116B3AE8F0087DA9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3662A7AF16B3AE8F0087DA9B /* InfoPlist.strings */; };
+		3662A7B316B3AE8F0087DA9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662A7B216B3AE8F0087DA9B /* main.m */; };
+		3662A7B916B3AE8F0087DA9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3662A7B816B3AE8F0087DA9B /* Default.png */; };
+		3662A7BB16B3AE8F0087DA9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3662A7BA16B3AE8F0087DA9B /* Default@2x.png */; };
+		3662A7BD16B3AE8F0087DA9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3662A7BC16B3AE8F0087DA9B /* Default-568h@2x.png */; };
+		3662A7C316B3AEE30087DA9B /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662A7C216B3AEE30087DA9B /* GHUnitIOS.framework */; };
+		3662A7C416B3AEE30087DA9B /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662A7C216B3AEE30087DA9B /* GHUnitIOS.framework */; };
+		3662A7C616B3AF450087DA9B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662A7C516B3AF450087DA9B /* QuartzCore.framework */; };
 		3682E21C16AEA20500F4A434 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21B16AEA20500F4A434 /* UIKit.framework */; };
 		3682E21E16AEA20500F4A434 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21D16AEA20500F4A434 /* Foundation.framework */; };
 		3682E22016AEA20500F4A434 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21F16AEA20500F4A434 /* CoreGraphics.framework */; };
@@ -29,6 +40,16 @@
 /* Begin PBXFileReference section */
 		3662A74516B1E23A0087DA9B /* BuildInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildInfo.h; sourceTree = "<group>"; };
 		3662A74616B1E23A0087DA9B /* BuildInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildInfo.m; sourceTree = "<group>"; };
+		3662A7A716B3AE8E0087DA9B /* GHUnit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUnit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3662A7AE16B3AE8F0087DA9B /* GHUnit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHUnit-Info.plist"; sourceTree = "<group>"; };
+		3662A7B016B3AE8F0087DA9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3662A7B216B3AE8F0087DA9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3662A7B416B3AE8F0087DA9B /* GHUnit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GHUnit-Prefix.pch"; sourceTree = "<group>"; };
+		3662A7B816B3AE8F0087DA9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		3662A7BA16B3AE8F0087DA9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		3662A7BC16B3AE8F0087DA9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3662A7C216B3AEE30087DA9B /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../../../../../Developer/GHUnitIOS.framework; sourceTree = "<group>"; };
+		3662A7C516B3AF450087DA9B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3682E21716AEA20500F4A434 /* JenkinsReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JenkinsReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3682E21B16AEA20500F4A434 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3682E21D16AEA20500F4A434 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,6 +76,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3662A7A416B3AE8E0087DA9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3662A7C616B3AF450087DA9B /* QuartzCore.framework in Frameworks */,
+				3662A7A916B3AE8E0087DA9B /* UIKit.framework in Frameworks */,
+				3662A7AA16B3AE8E0087DA9B /* Foundation.framework in Frameworks */,
+				3662A7AB16B3AE8E0087DA9B /* CoreGraphics.framework in Frameworks */,
+				3662A7C416B3AEE30087DA9B /* GHUnitIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3682E21416AEA20500F4A434 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,16 +95,41 @@
 				3682E21C16AEA20500F4A434 /* UIKit.framework in Frameworks */,
 				3682E21E16AEA20500F4A434 /* Foundation.framework in Frameworks */,
 				3682E22016AEA20500F4A434 /* CoreGraphics.framework in Frameworks */,
+				3662A7C316B3AEE30087DA9B /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3662A7AC16B3AE8F0087DA9B /* GHUnit */ = {
+			isa = PBXGroup;
+			children = (
+				3662A7AD16B3AE8F0087DA9B /* Supporting Files */,
+			);
+			path = GHUnit;
+			sourceTree = "<group>";
+		};
+		3662A7AD16B3AE8F0087DA9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3662A7AE16B3AE8F0087DA9B /* GHUnit-Info.plist */,
+				3662A7AF16B3AE8F0087DA9B /* InfoPlist.strings */,
+				3662A7B216B3AE8F0087DA9B /* main.m */,
+				3662A7B416B3AE8F0087DA9B /* GHUnit-Prefix.pch */,
+				3662A7B816B3AE8F0087DA9B /* Default.png */,
+				3662A7BA16B3AE8F0087DA9B /* Default@2x.png */,
+				3662A7BC16B3AE8F0087DA9B /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		3682E20C16AEA20500F4A434 = {
 			isa = PBXGroup;
 			children = (
+				3662A7C516B3AF450087DA9B /* QuartzCore.framework */,
 				3682E22116AEA20500F4A434 /* JenkinsReader */,
+				3662A7AC16B3AE8F0087DA9B /* GHUnit */,
 				3682E21A16AEA20500F4A434 /* Frameworks */,
 				3682E21816AEA20500F4A434 /* Products */,
 			);
@@ -81,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				3682E21716AEA20500F4A434 /* JenkinsReader.app */,
+				3662A7A716B3AE8E0087DA9B /* GHUnit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,6 +147,7 @@
 		3682E21A16AEA20500F4A434 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3662A7C216B3AEE30087DA9B /* GHUnitIOS.framework */,
 				3682E21B16AEA20500F4A434 /* UIKit.framework */,
 				3682E21D16AEA20500F4A434 /* Foundation.framework */,
 				3682E21F16AEA20500F4A434 /* CoreGraphics.framework */,
@@ -134,6 +194,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3662A7A616B3AE8E0087DA9B /* GHUnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3662A7C016B3AE8F0087DA9B /* Build configuration list for PBXNativeTarget "GHUnit" */;
+			buildPhases = (
+				3662A7A316B3AE8E0087DA9B /* Sources */,
+				3662A7A416B3AE8E0087DA9B /* Frameworks */,
+				3662A7A516B3AE8E0087DA9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GHUnit;
+			productName = GHUnit;
+			productReference = 3662A7A716B3AE8E0087DA9B /* GHUnit.app */;
+			productType = "com.apple.product-type.application";
+		};
 		3682E21616AEA20500F4A434 /* JenkinsReader */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3682E23B16AEA20500F4A434 /* Build configuration list for PBXNativeTarget "JenkinsReader" */;
@@ -173,11 +250,23 @@
 			projectRoot = "";
 			targets = (
 				3682E21616AEA20500F4A434 /* JenkinsReader */,
+				3662A7A616B3AE8E0087DA9B /* GHUnit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3662A7A516B3AE8E0087DA9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3662A7B116B3AE8F0087DA9B /* InfoPlist.strings in Resources */,
+				3662A7B916B3AE8F0087DA9B /* Default.png in Resources */,
+				3662A7BB16B3AE8F0087DA9B /* Default@2x.png in Resources */,
+				3662A7BD16B3AE8F0087DA9B /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3682E21516AEA20500F4A434 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +285,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3662A7A316B3AE8E0087DA9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3662A7B316B3AE8F0087DA9B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3682E21316AEA20500F4A434 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,6 +309,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3662A7AF16B3AE8F0087DA9B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3662A7B016B3AE8F0087DA9B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		3682E22416AEA20500F4A434 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -231,6 +336,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3662A7BE16B3AE8F0087DA9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Developer\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GHUnit/GHUnit-Prefix.pch";
+				INFOPLIST_FILE = "GHUnit/GHUnit-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3662A7BF16B3AE8F0087DA9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Developer\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GHUnit/GHUnit-Prefix.pch";
+				INFOPLIST_FILE = "GHUnit/GHUnit-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		3682E23916AEA20500F4A434 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -284,6 +429,10 @@
 		3682E23C16AEA20500F4A434 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Developer\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JenkinsReader/JenkinsReader-Prefix.pch";
 				INFOPLIST_FILE = "JenkinsReader/JenkinsReader-Info.plist";
@@ -295,6 +444,10 @@
 		3682E23D16AEA20500F4A434 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Developer\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JenkinsReader/JenkinsReader-Prefix.pch";
 				INFOPLIST_FILE = "JenkinsReader/JenkinsReader-Info.plist";
@@ -306,6 +459,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3662A7C016B3AE8F0087DA9B /* Build configuration list for PBXNativeTarget "GHUnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3662A7BE16B3AE8F0087DA9B /* Debug */,
+				3662A7BF16B3AE8F0087DA9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3682E21116AEA20500F4A434 /* Build configuration list for PBXProject "JenkinsReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
