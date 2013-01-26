@@ -13,7 +13,7 @@
 // 余計な文字を削除して配列に変換する
 + (NSArray*)convertDataToArray:(NSString*)data;
 // 変換した結果から、BuildInfoの配列を作成する
-+ (NSArray*)arrayToDictionary:(NSArray*)array;
++ (NSArray*)arrayToBuildInfo:(NSArray*)array;
 
 
 @end

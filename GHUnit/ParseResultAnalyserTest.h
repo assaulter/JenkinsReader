@@ -12,6 +12,7 @@
 
 @interface ParseResultAnalyserTest : GHTestCase
 
-@property (nonatomic, assign) NSString* testData;
+@property (nonatomic, retain) NSString* testData;
+@property (nonatomic, retain) NSArray* dataArray;
 
 @end
