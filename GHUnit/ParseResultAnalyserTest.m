@@ -23,9 +23,4 @@
 //    GHAssertEqualObjects(result, ex, @"こんなかんじにパースされる");
 //}
 
-- (void)testHoge {
-    NSString* result = [ParseResultAnalyser test];
-    GHAssertEqualStrings(result, @"hogehoge", @"hoge");
-}
-
 @end
