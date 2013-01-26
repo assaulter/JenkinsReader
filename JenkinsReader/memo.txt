@@ -37,5 +37,8 @@ ex.
 状態の配列
 を作成する。indexで引けば対応するのでいいかな。
 
-1/25
+1/26
+ParseResultAnalyser作成。テストも。
+BuildResultReaderのテストを作成する。
+
 

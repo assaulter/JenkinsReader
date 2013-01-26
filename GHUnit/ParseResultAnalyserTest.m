@@ -9,6 +9,10 @@
 #import "ParseResultAnalyserTest.h"
 #import "BuildInfo.h"
 
+static const int GOOD = 1;
+static const int BETTER = 2;
+static const int BAD = 3;
+
 @implementation ParseResultAnalyserTest
 
 - (void)setUpClass {
@@ -35,6 +39,32 @@
         GHAssertEqualStrings(info.buildNumber, [self.dataArray objectAtIndex:(3*i)+1], @"build number");
         GHAssertEqualStrings(info.status, [self.dataArray objectAtIndex:(3*i)+2], @"build status");
     }
+}
+
+- (void)testGetAppStatus {
+    BuildInfo* info1 = [BuildInfo new];
+    info1.status = @"安定";
+    BuildInfo* info2 = [BuildInfo new];
+    info2.status = @"正常に復帰";
+    BuildInfo* info3 = [BuildInfo new];
+    info3.status = @"ビルド#xxから故障";
+    BuildInfo* info4 = [BuildInfo new];
+    info4.status = @"このビルドから故障";
+    
+    // すべて安定している場合
+    NSArray* data = [[NSArray alloc]initWithObjects:info1, info1, nil];
+    int result = [ParseResultAnalyser getAppStatus:data];
+    GHAssertEquals(result, GOOD, @"すべて安定の場合はGOOD");
+    
+    // 安定 + 復帰の場合
+    data = [[NSArray alloc]initWithObjects:info1, info2, nil];
+    result = [ParseResultAnalyser getAppStatus:data];
+    GHAssertEquals(result, BETTER, @"安定 + 復帰の場合は BETTER");
+    
+    // 安定 + 復帰 + 故障の場合(継続的故障も、このビルドから故障も同列にみなす)
+    data = [[NSArray alloc]initWithObjects:info1, info2, info3, info4, nil];
+    result = [ParseResultAnalyser getAppStatus:data];
+    GHAssertEquals(result, BAD, @"故障が含まれる場合は、強制的にBAD");
 }
 
 @end

@@ -54,51 +54,7 @@ static const int BAD = 3;
     XMLParserのfinishがトリガー */
 -(void)didFinishParseWithData:(NSString*)parsedData {
     NSLog(@"parsedData %@", parsedData);
-    NSString* data = [[parsedData stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@" "];
-    NSArray* phrases = [data componentsSeparatedByString:@" "];
-    
-    [self arrayToDictionary:phrases];
-    // アプリの状態を取得する
-    
-}
-
-// 配列にデータ(BuildInfo型)を格納する
-- (void)arrayToDictionary:(NSArray*)array {
-    int i = 0;
-    while ([[array objectAtIndex:i]length] != 0) {
-        BuildInfo* info = [BuildInfo new];
-        if (i%3 == 0) { // ワークスペース名が入っている
-            info.workSpaceName = [array objectAtIndex:i];
-        } else if (i%3 == 1){ // ビルドナンバーが入っている
-            info.buildNumber = [array objectAtIndex:i];
-        } else { // 状態が入っている
-            info.status = [array objectAtIndex:i];
-        }
-        [self.data addObject:info];
-        i++;
-    }
-}
-
-/** アプリとして状態はどうなのかを返す。
-    つまり：self.dataを見て、
-    一つでも悪いのがあったら → bad
-    状態が悪いまま → bad
-    --------------------------------
-    状態が良くなったものがあったら → better (安定 + 正常に復帰)
-    安定 → good (All 安定)
-    の三種類に分類する
- */
-- (int)getAppStatus {
-    int appStatus = GOOD; // 初期状態。なんもなかったらコレを返す
-    for (BuildInfo* info in self.data) {
-        if ([info.status hasSuffix:@"故障"]) {
-            appStatus = BAD;
-            break;
-        } else if ([info.status hasSuffix:@"復帰"]) {
-            appStatus = BETTER;
-        }
-    }
-    return appStatus;
+    // ParseResultAnalyserのクラスメソッドを使うこと
 }
 
 @end

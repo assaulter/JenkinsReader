@@ -42,7 +42,7 @@
 		3682E24216AEA26500F4A434 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3682E24016AEA26500F4A434 /* SettingViewController.xib */; };
 		3682E24516AEA7D800F4A434 /* BuildResultReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3682E24416AEA7D800F4A434 /* BuildResultReader.m */; };
 		3682E2B316AFF79500F4A434 /* RssReader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3682E2B216AFF79500F4A434 /* RssReader.txt */; };
-		3682E2B516AFF7B300F4A434 /* Algo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3682E2B416AFF7B300F4A434 /* Algo.txt */; };
+		3682E2B516AFF7B300F4A434 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3682E2B416AFF7B300F4A434 /* memo.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,7 +84,7 @@
 		3682E24316AEA7D800F4A434 /* BuildResultReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildResultReader.h; sourceTree = "<group>"; };
 		3682E24416AEA7D800F4A434 /* BuildResultReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildResultReader.m; sourceTree = "<group>"; };
 		3682E2B216AFF79500F4A434 /* RssReader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RssReader.txt; sourceTree = "<group>"; };
-		3682E2B416AFF7B300F4A434 /* Algo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Algo.txt; sourceTree = "<group>"; };
+		3682E2B416AFF7B300F4A434 /* memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +172,7 @@
 		3682E22116AEA20500F4A434 /* JenkinsReader */ = {
 			isa = PBXGroup;
 			children = (
-				3682E2B416AFF7B300F4A434 /* Algo.txt */,
+				3682E2B416AFF7B300F4A434 /* memo.txt */,
 				3682E22A16AEA20500F4A434 /* AppDelegate.h */,
 				3682E22B16AEA20500F4A434 /* AppDelegate.m */,
 				3662A74516B1E23A0087DA9B /* BuildInfo.h */,
@@ -294,7 +294,7 @@
 				3682E23816AEA20500F4A434 /* ViewController.xib in Resources */,
 				3682E24216AEA26500F4A434 /* SettingViewController.xib in Resources */,
 				3682E2B316AFF79500F4A434 /* RssReader.txt in Resources */,
-				3682E2B516AFF7B300F4A434 /* Algo.txt in Resources */,
+				3682E2B516AFF7B300F4A434 /* memo.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

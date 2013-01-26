@@ -9,6 +9,10 @@
 #import "ParseResultAnalyser.h"
 #import "BuildInfo.h"
 
+static const int GOOD = 1;
+static const int BETTER = 2;
+static const int BAD = 3;
+
 @implementation ParseResultAnalyser
 
 + (NSArray*)convertDataToArray:(NSString*)data {
@@ -31,6 +35,28 @@
         i++;
     }
     return result;
+}
+
+/** アプリとして状態はどうなのかを返す。
+ @param data : BuildInfoの配列
+ 一つでも悪いのがあったら → bad
+ 状態が悪いまま → bad
+ --------------------------------
+ 状態が良くなったものがあったら → better (安定 + 正常に復帰)
+ 安定 → good (All 安定)
+ の三種類に分類する
+ */
++ (int)getAppStatus:(NSArray*)data {
+    int appStatus = GOOD; // 初期状態。なんもなかったらコレを返す
+    for (BuildInfo* info in data) {
+        if ([info.status hasSuffix:@"故障"]) {
+            appStatus = BAD;
+            break;
+        } else if ([info.status hasSuffix:@"復帰"]) {
+            appStatus = BETTER;
+        }
+    }
+    return appStatus;
 }
 
 @end

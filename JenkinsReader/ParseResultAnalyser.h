@@ -14,6 +14,8 @@
 + (NSArray*)convertDataToArray:(NSString*)data;
 // 変換した結果から、BuildInfoの配列を作成する
 + (NSArray*)arrayToBuildInfo:(NSArray*)array;
+// BuildInfoの配列から、アプリとしてのステータスを決定する
++ (int)getAppStatus:(NSArray*)data;
 
 
 @end
