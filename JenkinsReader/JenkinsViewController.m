@@ -27,7 +27,7 @@ static const int BAD = 3;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Parser
     _resultReader = [[BuildResultReader alloc]init];
     // 音を鳴らす準備までしておく
     _failurePlayer =  [self createPlayerWithFilePath:@"doraque_delete"];
@@ -35,7 +35,6 @@ static const int BAD = 3;
     _recoverPlayer = [self createPlayerWithFilePath:@"doraque_levelup"];
     [_recoverPlayer prepareToPlay];
     
-    self.data = [[NSMutableArray alloc]init];
     [self timerStartWithSelector:@selector(startParse)];
 }
 
