@@ -43,8 +43,12 @@
 		3682E24516AEA7D800F4A434 /* BuildResultReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3682E24416AEA7D800F4A434 /* BuildResultReader.m */; };
 		3682E2B316AFF79500F4A434 /* RssReader.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3682E2B216AFF79500F4A434 /* RssReader.txt */; };
 		3682E2B516AFF7B300F4A434 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3682E2B416AFF7B300F4A434 /* memo.txt */; };
-		3686FAAF16B53DDF00B92F7D /* data_delete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3686FAAE16B53DDF00B92F7D /* data_delete.mp3 */; };
-		3686FAB016B53DDF00B92F7D /* data_delete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3686FAAE16B53DDF00B92F7D /* data_delete.mp3 */; };
+		3686FAB516B53F1600B92F7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3686FAB416B53F1600B92F7D /* AVFoundation.framework */; };
+		3686FAB616B53F1C00B92F7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3686FAB416B53F1600B92F7D /* AVFoundation.framework */; };
+		3686FAB816B5468B00B92F7D /* doraque_delete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3686FAB716B5468B00B92F7D /* doraque_delete.mp3 */; };
+		3686FAB916B5468B00B92F7D /* doraque_delete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3686FAB716B5468B00B92F7D /* doraque_delete.mp3 */; };
+		3686FABB16B548B700B92F7D /* doraque_levelup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3686FABA16B548B700B92F7D /* doraque_levelup.mp3 */; };
+		3686FABC16B548B700B92F7D /* doraque_levelup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3686FABA16B548B700B92F7D /* doraque_levelup.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,7 +91,10 @@
 		3682E24416AEA7D800F4A434 /* BuildResultReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildResultReader.m; sourceTree = "<group>"; };
 		3682E2B216AFF79500F4A434 /* RssReader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RssReader.txt; sourceTree = "<group>"; };
 		3682E2B416AFF7B300F4A434 /* memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
-		3686FAAE16B53DDF00B92F7D /* data_delete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = data_delete.mp3; sourceTree = "<group>"; };
+		3686FAB116B53E6700B92F7D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3686FAB416B53F1600B92F7D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3686FAB716B5468B00B92F7D /* doraque_delete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = doraque_delete.mp3; sourceTree = "<group>"; };
+		3686FABA16B548B700B92F7D /* doraque_levelup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = doraque_levelup.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3686FAB616B53F1C00B92F7D /* AVFoundation.framework in Frameworks */,
 				3662A7C616B3AF450087DA9B /* QuartzCore.framework in Frameworks */,
 				3662A7A916B3AE8E0087DA9B /* UIKit.framework in Frameworks */,
 				3662A7AA16B3AE8E0087DA9B /* Foundation.framework in Frameworks */,
@@ -107,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3686FAB516B53F1600B92F7D /* AVFoundation.framework in Frameworks */,
 				3682E21C16AEA20500F4A434 /* UIKit.framework in Frameworks */,
 				3682E21E16AEA20500F4A434 /* Foundation.framework in Frameworks */,
 				3682E22016AEA20500F4A434 /* CoreGraphics.framework in Frameworks */,
@@ -148,7 +157,6 @@
 				3662A7AC16B3AE8F0087DA9B /* GHUnit */,
 				3682E22116AEA20500F4A434 /* JenkinsReader */,
 				3682E21816AEA20500F4A434 /* Products */,
-				3662A7C516B3AF450087DA9B /* QuartzCore.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +172,9 @@
 		3682E21A16AEA20500F4A434 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3686FAB416B53F1600B92F7D /* AVFoundation.framework */,
+				3662A7C516B3AF450087DA9B /* QuartzCore.framework */,
+				3686FAB116B53E6700B92F7D /* AudioToolbox.framework */,
 				3662A7C216B3AEE30087DA9B /* GHUnitIOS.framework */,
 				3682E21B16AEA20500F4A434 /* UIKit.framework */,
 				3682E21D16AEA20500F4A434 /* Foundation.framework */,
@@ -214,7 +225,8 @@
 		3686FAAC16B53DC300B92F7D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3686FAAE16B53DDF00B92F7D /* data_delete.mp3 */,
+				3686FABA16B548B700B92F7D /* doraque_levelup.mp3 */,
+				3686FAB716B5468B00B92F7D /* doraque_delete.mp3 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -292,7 +304,8 @@
 				3662A7B916B3AE8F0087DA9B /* Default.png in Resources */,
 				3662A7BB16B3AE8F0087DA9B /* Default@2x.png in Resources */,
 				3662A7BD16B3AE8F0087DA9B /* Default-568h@2x.png in Resources */,
-				3686FAB016B53DDF00B92F7D /* data_delete.mp3 in Resources */,
+				3686FAB916B5468B00B92F7D /* doraque_delete.mp3 in Resources */,
+				3686FABC16B548B700B92F7D /* doraque_levelup.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +321,8 @@
 				3682E24216AEA26500F4A434 /* SettingViewController.xib in Resources */,
 				3682E2B316AFF79500F4A434 /* RssReader.txt in Resources */,
 				3682E2B516AFF7B300F4A434 /* memo.txt in Resources */,
-				3686FAAF16B53DDF00B92F7D /* data_delete.mp3 in Resources */,
+				3686FAB816B5468B00B92F7D /* doraque_delete.mp3 in Resources */,
+				3686FABB16B548B700B92F7D /* doraque_levelup.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

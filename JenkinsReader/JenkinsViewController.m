@@ -9,6 +9,7 @@
 #import "JenkinsViewController.h"
 #import "BuildResultReader.h"
 #import "ParseResultAnalyser.h"
+#import <AVFoundation/AVFoundation.h>
 
 static const float TIMER_INTERVAL = 5.0;
 
@@ -16,20 +17,24 @@ static const int GOOD = 1;
 static const int BETTER = 2;
 static const int BAD = 3;
 
-@interface JenkinsViewController () {
+@implementation JenkinsViewController {
     NSTimer* _timer;
     BuildResultReader* _resultReader;
+    AVAudioPlayer* _failurePlayer;
+    AVAudioPlayer* _recoverPlayer;
 }
-
-@end
-
-@implementation JenkinsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     _resultReader = [[BuildResultReader alloc]init];
+    // 音を鳴らす準備までしておく
+    _failurePlayer =  [self createPlayerWithFilePath:@"doraque_delete"];
+    [_failurePlayer prepareToPlay];
+    _recoverPlayer = [self createPlayerWithFilePath:@"doraque_levelup"];
+    [_recoverPlayer prepareToPlay];
+    
     self.data = [[NSMutableArray alloc]init];
     [self timerStartWithSelector:@selector(startParse)];
 }
@@ -55,7 +60,21 @@ static const int BAD = 3;
     XMLParserのfinishがトリガー */
 -(void)didFinishParseWithData:(NSString*)parsedData {
     // ParseResultAnalyserのクラスメソッドを使うこと
-    NSLog(@"app status %d" ,[ParseResultAnalyser getAppStatusFromParsedData:parsedData]);
+    int status = [ParseResultAnalyser getAppStatusFromParsedData:parsedData];
+    // 音を鳴らす(現状コケた時だけ)
+    if (status == BAD) {
+        [_failurePlayer play];
+    } else if (status == BETTER) {
+        [_recoverPlayer play];
+    }
+}
+
+// ファイルのurlをセットしたAVAudioPlayerを返すメソッド
+- (AVAudioPlayer*)createPlayerWithFilePath:(NSString*)path {
+    NSString* soundPath = [[NSBundle mainBundle]pathForResource:path ofType:@"mp3"];
+    NSURL* fileUrl = [[NSURL alloc]initFileURLWithPath:soundPath];
+    
+    return [[AVAudioPlayer alloc]initWithContentsOfURL:fileUrl error:nil];;
 }
 
 @end
