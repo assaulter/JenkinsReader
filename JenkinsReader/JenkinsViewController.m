@@ -8,6 +8,7 @@
 
 #import "JenkinsViewController.h"
 #import "BuildResultReader.h"
+#import "ParseResultAnalyser.h"
 
 static const float TIMER_INTERVAL = 5.0;
 
@@ -53,8 +54,8 @@ static const int BAD = 3;
 /** myUrlConnection delegate method
     XMLParserのfinishがトリガー */
 -(void)didFinishParseWithData:(NSString*)parsedData {
-    NSLog(@"parsedData %@", parsedData);
     // ParseResultAnalyserのクラスメソッドを使うこと
+    NSLog(@"app status %d" ,[ParseResultAnalyser getAppStatusFromParsedData:parsedData]);
 }
 
 @end

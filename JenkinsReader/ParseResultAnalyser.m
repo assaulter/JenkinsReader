@@ -15,6 +15,11 @@ static const int BAD = 3;
 
 @implementation ParseResultAnalyser
 
+// 下3つのメソッドを使い、parserから取得した文字列から、アプリのステータスを返却する
++ (int)getAppStatusFromParsedData:(NSString*)data {
+   return [self getAppStatus:[self arrayToBuildInfo:[self convertDataToArray:data]]];
+}
+
 + (NSArray*)convertDataToArray:(NSString*)data {
     NSString* result = [[data stringByReplacingOccurrencesOfString:@"(" withString:@""] stringByReplacingOccurrencesOfString:@")" withString:@" "];
     return [result componentsSeparatedByString:@" "];

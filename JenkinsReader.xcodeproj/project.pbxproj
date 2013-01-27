@@ -37,7 +37,7 @@
 		3682E23016AEA20500F4A434 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3682E22F16AEA20500F4A434 /* Default@2x.png */; };
 		3682E23216AEA20500F4A434 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3682E23116AEA20500F4A434 /* Default-568h@2x.png */; };
 		3682E23516AEA20500F4A434 /* JenkinsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3682E23416AEA20500F4A434 /* JenkinsViewController.m */; };
-		3682E23816AEA20500F4A434 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3682E23616AEA20500F4A434 /* ViewController.xib */; };
+		3682E23816AEA20500F4A434 /* JenkinsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3682E23616AEA20500F4A434 /* JenkinsViewController.xib */; };
 		3682E24116AEA26500F4A434 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3682E23F16AEA26500F4A434 /* SettingViewController.m */; };
 		3682E24216AEA26500F4A434 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3682E24016AEA26500F4A434 /* SettingViewController.xib */; };
 		3682E24516AEA7D800F4A434 /* BuildResultReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3682E24416AEA7D800F4A434 /* BuildResultReader.m */; };
@@ -77,7 +77,7 @@
 		3682E23116AEA20500F4A434 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3682E23316AEA20500F4A434 /* JenkinsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JenkinsViewController.h; sourceTree = "<group>"; };
 		3682E23416AEA20500F4A434 /* JenkinsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JenkinsViewController.m; sourceTree = "<group>"; };
-		3682E23716AEA20500F4A434 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		3682E23716AEA20500F4A434 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/JenkinsViewController.xib; sourceTree = "<group>"; };
 		3682E23E16AEA26500F4A434 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		3682E23F16AEA26500F4A434 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		3682E24016AEA26500F4A434 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -172,7 +172,6 @@
 		3682E22116AEA20500F4A434 /* JenkinsReader */ = {
 			isa = PBXGroup;
 			children = (
-				3682E2B416AFF7B300F4A434 /* memo.txt */,
 				3682E22A16AEA20500F4A434 /* AppDelegate.h */,
 				3682E22B16AEA20500F4A434 /* AppDelegate.m */,
 				3662A74516B1E23A0087DA9B /* BuildInfo.h */,
@@ -181,6 +180,8 @@
 				3682E24416AEA7D800F4A434 /* BuildResultReader.m */,
 				3682E23316AEA20500F4A434 /* JenkinsViewController.h */,
 				3682E23416AEA20500F4A434 /* JenkinsViewController.m */,
+				3682E23616AEA20500F4A434 /* JenkinsViewController.xib */,
+				3682E2B416AFF7B300F4A434 /* memo.txt */,
 				3662A7E116B3B8C40087DA9B /* ParseResultAnalyser.h */,
 				3662A7E216B3B8C40087DA9B /* ParseResultAnalyser.m */,
 				3682E2B216AFF79500F4A434 /* RssReader.txt */,
@@ -188,7 +189,6 @@
 				3682E23F16AEA26500F4A434 /* SettingViewController.m */,
 				3682E24016AEA26500F4A434 /* SettingViewController.xib */,
 				3682E22216AEA20500F4A434 /* Supporting Files */,
-				3682E23616AEA20500F4A434 /* ViewController.xib */,
 			);
 			path = JenkinsReader;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 				3682E22E16AEA20500F4A434 /* Default.png in Resources */,
 				3682E23016AEA20500F4A434 /* Default@2x.png in Resources */,
 				3682E23216AEA20500F4A434 /* Default-568h@2x.png in Resources */,
-				3682E23816AEA20500F4A434 /* ViewController.xib in Resources */,
+				3682E23816AEA20500F4A434 /* JenkinsViewController.xib in Resources */,
 				3682E24216AEA26500F4A434 /* SettingViewController.xib in Resources */,
 				3682E2B316AFF79500F4A434 /* RssReader.txt in Resources */,
 				3682E2B516AFF7B300F4A434 /* memo.txt in Resources */,
@@ -349,12 +349,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		3682E23616AEA20500F4A434 /* ViewController.xib */ = {
+		3682E23616AEA20500F4A434 /* JenkinsViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3682E23716AEA20500F4A434 /* en */,
 			);
-			name = ViewController.xib;
+			name = JenkinsViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
