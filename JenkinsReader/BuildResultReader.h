@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol BuildResultReaderDelegate <NSObject>
--(void)didFinishParseWithData:(NSString*)parsedData;
+-(void)didFinishParseWithAppStatus:(int)status;
 @end
 
 @interface BuildResultReader : NSObject<NSXMLParserDelegate>

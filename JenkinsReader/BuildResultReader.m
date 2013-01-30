@@ -7,26 +7,26 @@
 //
 
 #import "BuildResultReader.h"
+#import "ParseResultAnalyser.h"
 
-@interface BuildResultReader() {
-    NSMutableString* outputData;
+@implementation BuildResultReader {
+    NSMutableString* parsedData;
     NSMutableData* dataBuffer;
     BOOL isEntry, isTitle;
 }
-@end
-
-@implementation BuildResultReader
 
 - (id)init {
     self = [super init];
     if (self) {
-        outputData = [[NSMutableString alloc]init];
-        dataBuffer = [[NSMutableData alloc]initWithCapacity:0];
     }
     return self;
 }
 
 - (void)startConnectionWithUrl:(NSString*)url {
+    // データ保存領域の初期化
+    parsedData = [[NSMutableString alloc]init];
+    dataBuffer = [[NSMutableData alloc]initWithCapacity:0];
+    // 通信準備および開始
     NSURL *nsurl = [NSURL URLWithString:url];
     NSURLRequest *request = [NSURLRequest requestWithURL:nsurl];
     NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
@@ -50,7 +50,7 @@
     [parser parse];
 }
 
-// XMLのパース開始
+/** ここから、xmlParserの実装 */
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
 	// element フラグを初期化（NO に設定）
     isEntry = NO;
@@ -74,7 +74,7 @@
 	// element フラグが YES かどうかチェック
 	if (isEntry && isTitle) {
 		// 要素の値を elementBuffer へ追加
-        [outputData appendString:string];
+        [parsedData appendString:string];
 	}
 }
 
@@ -92,7 +92,8 @@
 
 // XML のパース終了
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    [self.delegate didFinishParseWithData:outputData];
+    int appStatus = [ParseResultAnalyser getAppStatusFromParsedData:parsedData];
+    [self.delegate didFinishParseWithAppStatus:appStatus];
 }
 
 - (void)parser:(NSXMLParser *)parser

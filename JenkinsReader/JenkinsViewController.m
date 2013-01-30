@@ -8,7 +8,6 @@
 
 #import "JenkinsViewController.h"
 #import "BuildResultReader.h"
-#import "ParseResultAnalyser.h"
 #import <AVFoundation/AVFoundation.h>
 
 static const float TIMER_INTERVAL = 5.0;
@@ -56,10 +55,9 @@ static const int BAD = 3;
 }
 
 /** myUrlConnection delegate method
-    XMLParserのfinishがトリガー */
--(void)didFinishParseWithData:(NSString*)parsedData {
-    // ParseResultAnalyserのクラスメソッドを使うこと
-    int status = [ParseResultAnalyser getAppStatusFromParsedData:parsedData];
+    XMLParseが終わったら呼ばれる */
+-(void)didFinishParseWithAppStatus:(int)status {
+    NSLog(@"status : %d", status);
     // 音を鳴らす(現状コケた時だけ)
     if (status == BAD) {
         [_failurePlayer play];
