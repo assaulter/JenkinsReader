@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 #import "JenkinsViewController.h"
 
 @implementation AppDelegate
@@ -16,8 +15,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[JenkinsViewController alloc] initWithNibName:@"JenkinsViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    JenkinsViewController* jenkinsViewController = [[JenkinsViewController alloc] initWithNibName:@"JenkinsViewController" bundle:nil];
+    self.navigationController = [[UINavigationController alloc]initWithRootViewController:jenkinsViewController];
+    self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -8,12 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class JenkinsViewController;
-
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) JenkinsViewController *viewController;
+@property (strong, nonatomic) UINavigationController *navigationController;
 
 @end

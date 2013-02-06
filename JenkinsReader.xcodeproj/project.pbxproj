@@ -396,6 +396,8 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../../Developer\"",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnit/GHUnit-Prefix.pch";
 				INFOPLIST_FILE = "GHUnit/GHUnit-Info.plist";
@@ -416,6 +418,8 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../../Developer\"",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GHUnit/GHUnit-Prefix.pch";
 				INFOPLIST_FILE = "GHUnit/GHUnit-Info.plist";

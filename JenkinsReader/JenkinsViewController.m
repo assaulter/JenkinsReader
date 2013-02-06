@@ -58,7 +58,7 @@ static const int BAD = 3;
     XMLParseが終わったら呼ばれる */
 -(void)didFinishParseWithAppStatus:(int)status {
     NSLog(@"status : %d", status);
-    // 音を鳴らす(現状コケた時だけ)
+    // 音を鳴らす
     if (status == BAD) {
         [_failurePlayer play];
     } else if (status == BETTER) {
