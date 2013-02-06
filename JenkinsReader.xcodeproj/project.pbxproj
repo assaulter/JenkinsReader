@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362AA7FB16C1DBB20011BDEE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662A7C516B3AF450087DA9B /* QuartzCore.framework */; };
 		3662A74716B1E23A0087DA9B /* BuildInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662A74616B1E23A0087DA9B /* BuildInfo.m */; };
 		3662A7A916B3AE8E0087DA9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21B16AEA20500F4A434 /* UIKit.framework */; };
 		3662A7AA16B3AE8E0087DA9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21D16AEA20500F4A434 /* Foundation.framework */; };
@@ -115,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				362AA7FB16C1DBB20011BDEE /* QuartzCore.framework in Frameworks */,
 				3686FAB516B53F1600B92F7D /* AVFoundation.framework in Frameworks */,
 				3682E21C16AEA20500F4A434 /* UIKit.framework in Frameworks */,
 				3682E21E16AEA20500F4A434 /* Foundation.framework in Frameworks */,
