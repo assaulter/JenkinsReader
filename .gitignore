@@ -1,1 +1,8 @@
-JenkinsReader.xcodeproj/project.xcworkspace/
+*.ipa
+*.bak
+.DS_Store
+*~
+*KazukiKubo*
+*/doc/*
+*/Relese/
+*/build/
