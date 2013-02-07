@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3621AACF16C3CA65007790CE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3621AACD16C3CA65007790CE /* SettingViewController.m */; };
+		3621AAD016C3CA65007790CE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3621AACD16C3CA65007790CE /* SettingViewController.m */; };
+		3621AAD116C3CA65007790CE /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3621AACE16C3CA65007790CE /* SettingViewController.xib */; };
+		3621AAD216C3CA65007790CE /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3621AACE16C3CA65007790CE /* SettingViewController.xib */; };
 		362AA7FB16C1DBB20011BDEE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3662A7C516B3AF450087DA9B /* QuartzCore.framework */; };
 		3662A74716B1E23A0087DA9B /* BuildInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3662A74616B1E23A0087DA9B /* BuildInfo.m */; };
 		3662A7A916B3AE8E0087DA9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3682E21B16AEA20500F4A434 /* UIKit.framework */; };
@@ -50,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3621AACC16C3CA65007790CE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		3621AACD16C3CA65007790CE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		3621AACE16C3CA65007790CE /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		3662A74516B1E23A0087DA9B /* BuildInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuildInfo.h; sourceTree = "<group>"; };
 		3662A74616B1E23A0087DA9B /* BuildInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuildInfo.m; sourceTree = "<group>"; };
 		3662A7A716B3AE8E0087DA9B /* GHUnit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUnit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +189,9 @@
 		3682E22116AEA20500F4A434 /* JenkinsReader */ = {
 			isa = PBXGroup;
 			children = (
+				3621AACC16C3CA65007790CE /* SettingViewController.h */,
+				3621AACD16C3CA65007790CE /* SettingViewController.m */,
+				3621AACE16C3CA65007790CE /* SettingViewController.xib */,
 				3686FAAC16B53DC300B92F7D /* Resources */,
 				3682E22A16AEA20500F4A434 /* AppDelegate.h */,
 				3682E22B16AEA20500F4A434 /* AppDelegate.m */,
@@ -300,6 +310,7 @@
 				3662A7BD16B3AE8F0087DA9B /* Default-568h@2x.png in Resources */,
 				3686FAB916B5468B00B92F7D /* doraque_delete.mp3 in Resources */,
 				3686FABC16B548B700B92F7D /* doraque_levelup.mp3 in Resources */,
+				3621AAD216C3CA65007790CE /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +327,7 @@
 				3682E2B516AFF7B300F4A434 /* memo.txt in Resources */,
 				3686FAB816B5468B00B92F7D /* doraque_delete.mp3 in Resources */,
 				3686FABB16B548B700B92F7D /* doraque_levelup.mp3 in Resources */,
+				3621AAD116C3CA65007790CE /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +362,7 @@
 				3676027D16B3BF3900E821BA /* AppDelegate.m in Sources */,
 				3676027E16B3BF3C00E821BA /* JenkinsViewController.m in Sources */,
 				3676028016B3BF4300E821BA /* BuildInfo.m in Sources */,
+				3621AAD016C3CA65007790CE /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +376,7 @@
 				3682E24516AEA7D800F4A434 /* BuildResultReader.m in Sources */,
 				3662A74716B1E23A0087DA9B /* BuildInfo.m in Sources */,
 				3662A7E316B3B8C40087DA9B /* ParseResultAnalyser.m in Sources */,
+				3621AACF16C3CA65007790CE /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
