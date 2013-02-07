@@ -51,7 +51,7 @@ static const int BAD = 3;
 /** パースを開始する　 */
 - (void)startParse {
     _resultReader.delegate = self;
-    [_resultReader startConnectionWithUrl:@"file:///Users/kazukikubo/Downloads/rssLatest.xml"];
+    [_resultReader startConnectionWithUrl:@"http://localhost:8080/rssLatest"];
 }
 
 /** myUrlConnection delegate method

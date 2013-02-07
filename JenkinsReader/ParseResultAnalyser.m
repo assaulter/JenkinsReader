@@ -54,7 +54,7 @@ static const int BAD = 3;
 + (int)getAppStatus:(NSArray*)data {
     int appStatus = GOOD; // 初期状態。なんもなかったらコレを返す
     for (BuildInfo* info in data) {
-        if ([info.status hasSuffix:@"故障"]) {
+        if ([info.status hasSuffix:@"故障"] || [info.status hasSuffix:@"失敗"]) {
             appStatus = BAD;
             break;
         } else if ([info.status hasSuffix:@"復帰"]) {

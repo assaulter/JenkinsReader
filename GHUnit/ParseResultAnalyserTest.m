@@ -67,4 +67,8 @@ static const int BAD = 3;
     GHAssertEquals(result, BAD, @"故障が含まれる場合は、強制的にBAD");
 }
 
+//- (void)testFail {
+//    GHAssertEquals(1, 2, @"test failed");
+//}
+
 @end
