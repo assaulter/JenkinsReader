@@ -7,10 +7,12 @@
 //
 
 #import "SettingViewController.h"
+#import "JenkinsViewController.h"
+#import "JenkinsReaderSetting.h"
 
 @interface SettingViewController () {
     NSArray* _times;
-    NSNumber* _num;
+    NSNumber* _interval;
     NSString* _url; // urlを保持する
 }
 
@@ -22,10 +24,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
     _times = [NSArray arrayWithObjects:[NSNumber numberWithInt:15], [NSNumber numberWithInt:30], [NSNumber numberWithInt:45], [NSNumber numberWithInt:60], [NSNumber numberWithInt:90], [NSNumber numberWithInt:120],nil];
     // 初期値
-    _num = [NSNumber numberWithInt:15];
+    _interval = [NSNumber numberWithInt:15];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,6 +38,17 @@
 -(IBAction)buttonPushed:(id)sender {
     // 設定を保持するクラスを作ってそれに保持。
     // JenkinsReaderクラスに値を渡してポーリングスタート
+    JenkinsReaderSetting* settings = [JenkinsReaderSetting new];
+    settings.url = _url;
+    settings.interval = _interval;
+    if (settings.url == nil) {
+        // url入れてください。
+        return;
+    }
+    JenkinsViewController* jenkinsViewController = [[JenkinsViewController alloc]initWithNibName:@"JenkinsViewController" bundle:nil];
+    // 設定を渡す
+    jenkinsViewController.settings = settings;
+    [self.navigationController pushViewController:jenkinsViewController animated:YES];
 }
 #pragma mark - UITextField
 -(IBAction)didEndOnExit:(UITextField*)sender {
@@ -45,9 +57,9 @@
 
 #pragma mark - UIPicherView
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{    
-    _num = [_times objectAtIndex:row];
+    _interval = [_times objectAtIndex:row];
 
-    self.time.text = [NSString stringWithFormat:@"%d", [_num intValue]];
+    self.time.text = [NSString stringWithFormat:@"%d", [_interval intValue]];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{

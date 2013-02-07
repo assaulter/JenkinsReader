@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "BuildResultReader.h"
 #import "BuildInfo.h"
+#import "JenkinsReaderSetting.h"
 
 @interface JenkinsViewController : UIViewController<BuildResultReaderDelegate>
+
+@property (strong, nonatomic) JenkinsReaderSetting* settings;
 
 @end

@@ -10,8 +10,6 @@
 #import "BuildResultReader.h"
 #import <AVFoundation/AVFoundation.h>
 
-static const float TIMER_INTERVAL = 120.0;
-
 @implementation JenkinsViewController {
     NSTimer* _timer;
     BuildResultReader* _resultReader;
@@ -31,6 +29,12 @@ static const float TIMER_INTERVAL = 120.0;
     [_recoverPlayer prepareToPlay];
     
     [self timerStartWithSelector:@selector(startParse)];
+    NSLog(@"hogehoge");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_timer invalidate];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,13 +45,13 @@ static const float TIMER_INTERVAL = 120.0;
 
 /** タイマーの初期化と起動 */
 - (void)timerStartWithSelector:(SEL)selector {
-    _timer = [NSTimer scheduledTimerWithTimeInterval:TIMER_INTERVAL target:self selector:selector userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:[self.settings.interval doubleValue] target:self selector:selector userInfo:nil repeats:YES];
 }
 
 /** パースを開始する　 */
 - (void)startParse {
     _resultReader.delegate = self;
-    [_resultReader startConnectionWithUrl:@"http://localhost:8080/rssLatest"];
+    [_resultReader startConnectionWithUrl:self.settings.url];
 }
 
 /** myUrlConnection delegate method
