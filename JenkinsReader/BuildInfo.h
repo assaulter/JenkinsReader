@@ -7,6 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+
+// アプリの状態のパラメータ
+typedef enum {
+    GOOD = 1,
+    BETTER = 2,
+    BAD = 3
+} AppStatus;
+
 /** 特定のワークスペースの状態を保持するクラス */
 @interface BuildInfo : NSObject
 

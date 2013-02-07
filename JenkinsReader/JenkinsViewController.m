@@ -10,11 +10,7 @@
 #import "BuildResultReader.h"
 #import <AVFoundation/AVFoundation.h>
 
-static const float TIMER_INTERVAL = 5.0;
-
-static const int GOOD = 1;
-static const int BETTER = 2;
-static const int BAD = 3;
+static const float TIMER_INTERVAL = 120.0;
 
 @implementation JenkinsViewController {
     NSTimer* _timer;

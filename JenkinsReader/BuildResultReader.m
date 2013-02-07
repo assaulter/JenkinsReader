@@ -15,13 +15,6 @@
     BOOL isEntry, isTitle;
 }
 
-- (id)init {
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)startConnectionWithUrl:(NSString*)url {
     // データ保存領域の初期化
     parsedData = [[NSMutableString alloc]init];

@@ -9,10 +9,6 @@
 #import "ParseResultAnalyser.h"
 #import "BuildInfo.h"
 
-static const int GOOD = 1;
-static const int BETTER = 2;
-static const int BAD = 3;
-
 @implementation ParseResultAnalyser
 
 // 下3つのメソッドを使い、parserから取得した文字列から、アプリのステータスを返却する
