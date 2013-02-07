@@ -12,8 +12,7 @@
 
 @interface SettingViewController () {
     NSArray* _times;
-    NSNumber* _interval;
-    NSString* _url; // urlを保持する
+    JenkinsReaderSetting* setting;
 }
 
 @end
@@ -23,10 +22,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    setting = [JenkinsReaderSetting new];
 	// Do any additional setup after loading the view, typically from a nib.
     _times = [NSArray arrayWithObjects:[NSNumber numberWithInt:15], [NSNumber numberWithInt:30], [NSNumber numberWithInt:45], [NSNumber numberWithInt:60], [NSNumber numberWithInt:90], [NSNumber numberWithInt:120],nil];
     // 初期値
-    _interval = [NSNumber numberWithInt:15];
+    setting.interval = [NSNumber numberWithInt:15];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,28 +38,25 @@
 -(IBAction)buttonPushed:(id)sender {
     // 設定を保持するクラスを作ってそれに保持。
     // JenkinsReaderクラスに値を渡してポーリングスタート
-    JenkinsReaderSetting* settings = [JenkinsReaderSetting new];
-    settings.url = _url;
-    settings.interval = _interval;
-    if (settings.url == nil) {
+    if ([setting.url length] == 0 ) {
         // url入れてください。
         return;
     }
     JenkinsViewController* jenkinsViewController = [[JenkinsViewController alloc]initWithNibName:@"JenkinsViewController" bundle:nil];
     // 設定を渡す
-    jenkinsViewController.settings = settings;
+    jenkinsViewController.settings = setting;
     [self.navigationController pushViewController:jenkinsViewController animated:YES];
 }
 #pragma mark - UITextField
 -(IBAction)didEndOnExit:(UITextField*)sender {
-    _url = sender.text;
+    setting.url = sender.text;
 }
 
 #pragma mark - UIPicherView
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{    
-    _interval = [_times objectAtIndex:row];
+    setting.interval = [_times objectAtIndex:row];
 
-    self.time.text = [NSString stringWithFormat:@"%d", [_interval intValue]];
+    self.time.text = [NSString stringWithFormat:@"%d", [setting.interval intValue]];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{

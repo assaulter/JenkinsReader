@@ -30,6 +30,7 @@
     
     [self timerStartWithSelector:@selector(startParse)];
     NSLog(@"hogehoge");
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
