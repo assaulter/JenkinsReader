@@ -9,10 +9,6 @@
 #import "ParseResultAnalyserTest.h"
 #import "BuildInfo.h"
 
-static const int GOOD = 1;
-static const int BETTER = 2;
-static const int BAD = 3;
-
 @implementation ParseResultAnalyserTest
 
 - (void)setUpClass {
@@ -67,8 +63,8 @@ static const int BAD = 3;
     GHAssertEquals(result, BAD, @"故障が含まれる場合は、強制的にBAD");
 }
 
-//- (void)testFail {
-//    GHAssertEquals(1, 2, @"test failed");
-//}
+- (void)testFail {
+    GHAssertEquals(1, 2, @"test failed");
+}
 
 @end

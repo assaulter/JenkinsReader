@@ -86,6 +86,7 @@
 // XML のパース終了
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     int appStatus = [ParseResultAnalyser getAppStatusFromParsedData:parsedData];
+    NSLog(@"parsed data : %@", parsedData);
     [self.delegate didFinishParseWithAppStatus:appStatus];
 }
 
